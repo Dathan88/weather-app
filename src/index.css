@@ -1,0 +1,41 @@
+.myHeader {
+	color: blue;
+	margin: auto;
+	width: 19.75%;
+	text-align: center;
+}
+
+.my-form {
+	margin: auto;
+	border: 1px solid black;
+	width: 32%;
+}
+
+.input-field {
+	margin: auto;
+	padding: 1em 1em;
+	width: 10.2em;
+}
+
+#searchBtn {
+	margin: auto auto 1em;
+	display: block;
+}
+
+#searchBtn:valid {
+	outline: none;
+	box-shadow: none;
+}
+
+input {
+	background-position: 98% 50%;
+	width: 12em;
+}
+
+input:focus:invalid {
+	box-shadow: 0 0 5px 1px #ff3333;
+}
+
+input:valid {
+	box-shadow: 0 0 5px 1px lime;
+}
