@@ -26,17 +26,13 @@ img {
 	width: 32%;
 	position: absolute;
 	left: 50%;
-	top: 40%;
+	top: 30%;
 }
 
 .input-field {
 	margin: auto;
 	padding: 1em 1em;
 	width: 10.2em;
-}
-
-input#location {
-	text-transform: capitalize;
 }
 
 #searchBtn {
@@ -60,4 +56,24 @@ input:focus:invalid {
 
 input:valid {
 	box-shadow: 0 0 5px 1px lime;
+}
+
+.loader {
+	border: 16px solid #f3f3f3; /* Light grey */
+	border-top: 16px solid #3498db; /* Blue */
+	border-radius: 50%;
+	width: 120px;
+	height: 120px;
+	margin: auto;
+	display: none;
+	animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
 }

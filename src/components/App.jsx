@@ -10,23 +10,29 @@ export default class App extends Component {
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
+	capInput(location) {
+		const locCap = location.charAt(0).toUpperCase() + location.slice(1);
+		//console.log(localStorage);
+
+		return locCap;
+	}
+
 	newSearch(e) {
 		const location = document.getElementById('location').value;
 
-		console.log(location);
-
-		return { location };
+		return this.capInput(location);
 	}
 
 	handleSubmit(e) {
-		const hideHeader = document.querySelector('.myHeader');
 		const showWeather = document.querySelector('.weather');
 		const weatherInput = this.newSearch(e);
 
 		e.preventDefault();
-		$('.myHeader').empty();
+		$('H1').empty();
 
-		hideHeader.style.display = 'none';
+		document.querySelector('.loader').style.display = 'block';
+		document.querySelector('img').src = '';
+
 		showWeather.style.display = 'block';
 
 		if (weatherInput) {
@@ -41,6 +47,7 @@ export default class App extends Component {
 				<h1 id="myHeader" className="myHeader">
 					Hello
 				</h1>
+				<div className="loader" />
 				<div className="weatherContainer">
 					<h1 className="weather" />
 					<img />
