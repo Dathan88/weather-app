@@ -16,7 +16,7 @@ export default class Input extends React.Component {
 					value={this.props.inputInfo.value}
 					placeholder={this.props.inputInfo.placeholder}
 					required={this.props.inputInfo.required}
-					defaultChecked={this.props.inputInfo.defaultChecked}
+					//defaultChecked={this.props.inputInfo.defaultChecked}
 				/>
 			</div>
 		);

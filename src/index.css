@@ -1,20 +1,42 @@
+.weatherContainer {
+	display: inline-flex;
+	justify-content: center;
+	width: 100%;
+}
+
 .myHeader {
 	color: blue;
 	margin: auto;
-	width: 19.75%;
 	text-align: center;
+	position: relative;
+}
+
+.weather {
+	color: blue;
+	display: none;
+}
+
+img {
+	margin: auto 1em;
 }
 
 .my-form {
-	margin: auto;
+	margin: auto auto auto -16%;
 	border: 1px solid black;
 	width: 32%;
+	position: absolute;
+	left: 50%;
+	top: 40%;
 }
 
 .input-field {
 	margin: auto;
 	padding: 1em 1em;
 	width: 10.2em;
+}
+
+input#location {
+	text-transform: capitalize;
 }
 
 #searchBtn {

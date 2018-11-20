@@ -1,60 +1,50 @@
 import React, { Component } from 'react';
 import Form from './Form.jsx';
-import * as ApiFunc from './APIFunctions.js';
+import { getId } from './APIFunctions.js';
 import 'index.css';
 import 'city.list.json';
 
-const sample = 'pleasant grove';
 export default class App extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			weather: this.load(),
-			currentUrl: 'http://api.openweathermap.org/data/2.5/weather?id=',
-			forecastUrl: 'http://api.openweathermap.org/data/2.5/forecast?id=',
-			appid: 'b6f7913093d721bf4bea96c5e6d258e9',
-		};
 		this.handleSubmit = this.handleSubmit.bind(this);
-	}
-
-	save(weather) {
-		this.setState({ weather });
-		localStorage.setItem('weather', JSON.stringify(weather));
-	}
-
-	load() {
-		if (localStorage.getItem('weather') == null) {
-			return console.log(sample);
-		} else {
-			const books = JSON.parse(localStorage.getItem('books'));
-
-			return books;
-		}
 	}
 
 	newSearch(e) {
 		const location = document.getElementById('location').value;
+
 		console.log(location);
 
 		return { location };
 	}
 
 	handleSubmit(e) {
+		const hideHeader = document.querySelector('.myHeader');
+		const showWeather = document.querySelector('.weather');
+		const weatherInput = this.newSearch(e);
+
 		e.preventDefault();
+		$('.myHeader').empty();
 
-		const weather = this.newSearch(e);
+		hideHeader.style.display = 'none';
+		showWeather.style.display = 'block';
 
-		if (weather) {
-			ApiFunc.getWeather(weather);
+		if (weatherInput) {
+			getId(weatherInput);
 			document.querySelector('form').reset();
 		}
 	}
 
 	render() {
 		return (
-			<div>
-				<h1 className="myHeader">Hello </h1>
-				<img />
+			<div className="container">
+				<h1 id="myHeader" className="myHeader">
+					Hello
+				</h1>
+				<div className="weatherContainer">
+					<h1 className="weather" />
+					<img />
+				</div>
 				<Form onSubmit={this.handleSubmit} />
 			</div>
 		);
