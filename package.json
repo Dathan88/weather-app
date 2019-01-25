@@ -26,8 +26,8 @@
 	"homepage": "https://github.com/Dathan88/weather-app#readme",
 	"devDependencies": {
 		"@babel/core": "7.1.6",
-		"@babel/node": "^7.0.0",
-		"@babel/plugin-proposal-class-properties": "^7.1.0",
+		"@babel/node": "^7.2.2",
+		"@babel/plugin-proposal-class-properties": "^7.3.0",
 		"@babel/preset-env": "7.1.6",
 		"@babel/preset-react": "7.0.0",
 		"babel-loader": "8.0.4",
@@ -49,11 +49,11 @@
 		"style-loader": "0.23.1",
 		"webpack": "4.25.1",
 		"webpack-cli": "3.1.2",
-		"webpack-dev-server": "3.1.10"
+		"webpack-dev-server": "^3.1.14"
 	},
 	"dependencies": {
-		"@babel/polyfill": "^7.0.0",
-		"@babel/runtime": "^7.1.5",
-		"styled-components": "^4.1.1"
+		"@babel/polyfill": "^7.2.5",
+		"@babel/runtime": "^7.3.1",
+		"styled-components": "^4.1.3"
 	}
 }

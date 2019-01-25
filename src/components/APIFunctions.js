@@ -15,6 +15,7 @@ async function getCurrentWeather(searchId) {
 		const icon = weatherData[0].icon;
 		const iconUrl = 'http://openweathermap.org/img/w/' + icon + '.png';
 		img.src = iconUrl;
+		console.log(searchData);
 
 		for (let i = 0; i < weatherData.length; i++) {
 			console.log(weatherData[i].main);
